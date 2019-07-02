@@ -15,21 +15,25 @@ def break_down(genome, k):
     return [genome[i:i + k] for i in range(len(genome) - k + 1)]
 
 
+def displayConnections(connections):
+    ls = []
+    for x in connections.keys():
+        for y in range(len(connections[x])):
+            ls.append(x)
+    return ls
+
+
 k = int(input())
 genome = input()
 
 edges = break_down(genome, k)
 
-g = nx.DiGraph()
+g = nx.MultiDiGraph()
 for edge in edges:
     n1 = preffix(edge)
     n2 = suffix(edge)
-    g.add_node(n1)
-    g.add_node(n2)
     g.add_edge(n1, n2, val=edge)
 
-
-print(g)
 for node in g.adjacency():
     if len(node[1]) > 0:
-        print(f'{node[0]} -> {",".join(node[1].keys())}')
+        print(f'{node[0]} -> {",".join(displayConnections(node[1]))}')

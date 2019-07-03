@@ -1,5 +1,5 @@
 import networkx as nx
-
+import matplotlib.pyplot as plt
 
 def preffix(r):
     k = len(r)
@@ -37,3 +37,6 @@ for edge in edges:
 for node in g.adjacency():
     if len(node[1]) > 0:
         print(f'{node[0]} -> {",".join(displayConnections(node[1]))}')
+
+nx.draw_networkx(g, with_labels=True, pos=nx.kamada_kawai_layout(g), font_color="red", node_color="blue")
+plt.show()

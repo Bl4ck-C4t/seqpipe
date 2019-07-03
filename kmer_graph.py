@@ -29,7 +29,6 @@ def DeBruijn(patterns):
 
 
 if __name__ == '__main__':
-    input()
     patterns = []
     while True:
         try:

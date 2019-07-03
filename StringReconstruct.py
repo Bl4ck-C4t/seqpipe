@@ -5,9 +5,10 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 def StringReconstruction(Patterns):
-    db = DeBruijn(patterns)
+    db = DeBruijn(Patterns)
     plt.figure(1)
     # nx.draw_networkx(db, with_labels=True, pos=nx.kamada_kawai_layout(db), font_color="red")
+    # plt.show()
     path = EulerianPath(db)
     text = PathToGenome(path)
     return text

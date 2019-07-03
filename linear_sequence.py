@@ -16,4 +16,4 @@ if __name__ == '__main__':
             ls.append(input())
         except EOFError as e:
             break
-    print(PathToGenome(ls))
+    print(PathToGenome("->".join(ls)))

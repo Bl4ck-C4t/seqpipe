@@ -8,13 +8,13 @@ def paired_deassemble(genome, k, d):
     return ls
 
 
-# s = ""
-# for x in sorted(ls):
-#     s += f'({x}) '
-# print(s)
 if __name__ == '__main__':
     k, d = list(map(lambda x: int(x), input().split(" ")))
     genome = input()
     ls = paired_deassemble(genome, k, d)
+    s = ""
+    for x in ls:
+        s += f'({x})\n'
+    print(s)
     for x in ls:
         print(x)

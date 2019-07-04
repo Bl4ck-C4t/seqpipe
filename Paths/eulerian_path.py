@@ -1,6 +1,6 @@
 import networkx as nx
-import matplotlib.pyplot as plt
-import eulerian_cycle as ec
+from Paths import eulerian_cycle as ec
+
 
 # nx.eulerize(g)
 # ls = list(nx.eulerian_circuit(g))

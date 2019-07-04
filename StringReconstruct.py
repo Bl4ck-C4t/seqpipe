@@ -1,6 +1,6 @@
-from linear_sequence import *
-from eulerian_path import *
-from kmer_graph import *
+from Assembly.assemble import *
+from Paths.eulerian_path import *
+from GraphGenerators.kmer_graph import *
 import networkx as nx
 import matplotlib.pyplot as plt
 

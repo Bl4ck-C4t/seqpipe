@@ -1,6 +1,6 @@
-from linear_sequence import *
-from eulerian_cycle import *
-from kmer_graph import *
+from Assembly.assemble import *
+from Paths.eulerian_cycle import *
+from GraphGenerators.kmer_graph import *
 from sys import argv
 
 

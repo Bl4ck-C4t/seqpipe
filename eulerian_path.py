@@ -1,6 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
-
+import eulerian_cycle as ec
 
 # nx.eulerize(g)
 # ls = list(nx.eulerian_circuit(g))
@@ -18,10 +18,10 @@ def EulerianPath(g):
                     start = node2
     # nx.draw_networkx(g, with_labels=True, pos=nx.kamada_kawai_layout(g), font_color="red", node_color="blue")
     # plt.show()
-    ls = list(nx.eulerian_circuit(g, source=start))
-    path = ls[0][0] + "->" + ls[0][1]
-    for x in ls[1:-1]:
-        path += "->" + x[1]
+    path = ec.EulerianCycle2(g, start=start)
+    # path = ls[0][0] + "->" + ls[0][1]
+    # for x in ls[1:-1]:
+    #     path += "->" + x[1]
     return path
 
 

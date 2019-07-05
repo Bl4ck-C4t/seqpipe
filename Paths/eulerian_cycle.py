@@ -38,6 +38,7 @@ def combine(path, full_path):
     else:
         path += full_path[1:]
 
+
 def AllEulerianCycles2(g, start=None):
     if start is None:
         start = list(g.nodes)[0]
@@ -90,14 +91,19 @@ def performCycle(g, start):
             # cycle completed
             return path
         next_edge = next_edges[0]
+        if next_edge[1] == curr_node:
+            for i in range(len(list(filter(lambda x: x[0] == x[1], next_edges)))):
+                path.append(curr_node)
+                g[curr_node][curr_node][i]['v'] = True
+            continue
         curr_node = next_edge[1]
         g.edges[next_edge]['v'] = True
         # path.append(g[next_edge[0]][next_edge[1]][0]['val'])
         path.append(curr_node)
 
+
 def AllEulerianCycles(g):
     return set([EulerianCycle2(g, node) for node in g])
-
 
 
 def draw_thread(g):

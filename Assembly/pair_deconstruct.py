@@ -16,5 +16,5 @@ if __name__ == '__main__':
     for x in ls:
         s += f'({x})\n'
     print(s)
-    for x in ls:
+    for x in sorted(ls):
         print(x)

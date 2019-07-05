@@ -9,7 +9,7 @@ from Paths import eulerian_cycle as ec
 #     path += "->" + x[1]
 # print(path)
 def EulerianPath(g):
-    start = ""
+    start = list(g.nodes)[0]
     for node in g.nodes:
         if g.out_degree(node) < g.in_degree(node):
             for node2 in g.nodes:
@@ -22,7 +22,7 @@ def EulerianPath(g):
     # path = ls[0][0] + "->" + ls[0][1]
     # for x in ls[1:-1]:
     #     path += "->" + x[1]
-    return path
+    return "->".join(path.split("->")[:-1])
 
 
 if __name__ == '__main__':

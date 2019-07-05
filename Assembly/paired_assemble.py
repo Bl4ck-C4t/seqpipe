@@ -9,8 +9,8 @@ def paired_assemble(pairs, d):
     part1 = PathToGenome("->".join(ls1))
     part2 = PathToGenome("->".join(ls2))
     k = len(pairs[0][0])
-    # if part1[k+d:] != part2[:-(k+d)]:
-    #     raise Exception(f"Part mismatch: {part1} -/> {part2}")
+    if part1[k+d:] != part2[:-(k+d)]:
+        raise Exception(f"Part mismatch: {part1} -/> {part2}")
     # print(part1)
     # print(part2)
     return part1 + part2[-(k + d):]

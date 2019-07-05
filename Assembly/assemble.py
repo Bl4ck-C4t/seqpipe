@@ -14,8 +14,8 @@ def PathToGenome(path):
     k = len(path[0])
     genome = path[0]
     for i in range(len(path)-1):
-        # if preffix(path[i + 1]) != suffix(path[i]):
-        #     raise Exception(f"Part mismatch: {path[i]} -/> {path[i + 1]}")
+        if preffix(path[i + 1]) != suffix(path[i]):
+            raise Exception(f"Part mismatch: {path[i]} -/> {path[i + 1]}")
         genome += path[i + 1][k - 1]
     return genome
 

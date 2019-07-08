@@ -1,0 +1,10 @@
+chr1 refGene.input exon 10002682 10002840 . - . gene_id "LZIC"; transcript_id "NM_001316973"; exon_number "7"; exon_id "NM_001316973.7"; gene_name "LZIC";
+chr1 refGene.input exon 10002682 10002840 . - . gene_id "LZIC"; transcript_id "NM_001316975"; exon_number "7"; exon_id "NM_001316975.7"; gene_name "LZIC";
+chr1 refGene.input exon 10002682 10002840 . - . gene_id "LZIC"; transcript_id "NM_001316976"; exon_number "5"; exon_id "NM_001316976.5"; gene_name "LZIC";
+chr1 refGene.input exon 10002682 10002840 . - . gene_id "LZIC"; transcript_id "NM_032368"; exon_number "7"; exon_id "NM_032368.7"; gene_name "LZIC";
+chr1 refGene.input CDS 10002739 10002793 . - 0 gene_id "LZIC"; transcript_id "NM_001316974"; exon_number "7"; exon_id "NM_001316974.7"; gene_name "LZIC";
+chr1 refGene.input exon 10002739 10002840 . - . gene_id "LZIC"; transcript_id "NM_001316974"; exon_number "7"; exon_id "NM_001316974.7"; gene_name "LZIC";
+chr1 refGene.input start_codon 10002791 10002793 . - 0 gene_id "LZIC"; transcript_id "NM_001316974"; exon_number "7"; exon_id "NM_001316974.7"; gene_name "LZIC";
+chr1 refGene.input exon 10002981 10003083 . + . gene_id "NMNAT1"; transcript_id "NM_001297778"; exon_number "1"; exon_id "NM_001297778.1"; gene_name "NMNAT1";
+chr1 refGene.input transcript 10002981 10045556 . + . gene_id "NMNAT1"; transcript_id "NM_001297778";  gene_name "NMNAT1";
+chr1 refGene.input exon 10003307 10003485 . - . gene_id "LZIC"; transcript_id "NM_032368"; exon_number "8"; exon_id "NM_032368.8"; gene_name "LZIC";

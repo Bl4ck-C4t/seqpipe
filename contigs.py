@@ -20,11 +20,8 @@ if __name__ == '__main__':
             ls.append(input())
         except EOFError as e:
             break
-    # ls = split(ls)
-    # print(ls)
+
     g = DeBruijn(ls)
     paths = list(non_branch_paths(g))
-    # print(paths)
-    # paths = ["".join(x.split("->")) for x in paths]
     paths = [PathToGenome(x) for x in paths]
     print(" ".join(paths))

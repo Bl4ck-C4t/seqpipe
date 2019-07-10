@@ -19,20 +19,12 @@ reg3 = r'(?P<bin>\d+)\s+(?P<name>\w+)\s+(?P<chrom>\w+)\s+(?P<sign>\+|\-)\s+(?P<t
 
 
 class Transcript:
-    def __init__(self, gene_id, chromosome, feature, start, end, score, sign, frame, additional):
-        self.gene_id = gene_id
-        self.chromosome = chromosome
-        self.feature = feature
-        self.start = start
-        self.end = end
-        self.score = score
-        self.sign = sign
-        self.frame = frame
+    def __init__(self, additional):
         self.additional = additional
 
     def __str__(self):
         if "transcript_id" not in self.additional.keys():
-            return self.gene_id
+            return self.additional["name"]
         return self.additional["transcript_id"]
 
     def __repr__(self):
@@ -78,9 +70,9 @@ class Parser:
                 except StopIteration:
                     a = GeneModel(entries["gene_id"])
                     all_genomes.append(a)
-                trans = Transcript(entries["gene_id"], gene_match.group("chrom"), gene_match.group("feature"),
-                                   gene_match.group("start"), gene_match.group("end"), gene_match.group("score"),
-                                   gene_match.group("sign"), gene_match.group("frame"), entries)
+                for key in gene_match.groupdict().keys():
+                    entries[key] = gene_match.group(key)
+                trans = Transcript(entries)
                 a.transcripts.append(trans)
                 print(f"Added transcript {entries['transcript_id']} to gene {entries['gene_id']}")
         return all_genomes
@@ -98,19 +90,19 @@ class Parser:
                     raise WrongFormat("Wrong file format given")
                 entries = gene_match.group("additional").rsplit("\t")
                 entries = dict(zip(fields, entries))
-                if "blockSizes" in entries.keys():
-                    a = GeneModel(entries["name"])
-
-                    for size, start in zip(entries["blockSizes"].split(","), entries["blockStarts"].split(",")):
-                        if size == '' or start == '':
-                            continue
-                        trans = Transcript(entries["name"], gene_match.group("chromosome"), None,
-                                           start, int(size) + int(start), entries["score"],
-                                           entries["strand"], None, {})
-                        a.transcripts.append(trans)
-                        # print(f"Added new transcript to gene {entries['name']}")
-                else:
-                    a = BasicGeneModel(entries["name"])
+                # if "blockSizes" in entries.keys():
+                #     a = GeneModel(entries["name"])
+                #
+                #     for size, start in zip(entries["blockSizes"].split(","), entries["blockStarts"].split(",")):
+                #         if size == '' or start == '':
+                #             continue
+                #         trans = Transcript(entries["name"], gene_match.group("chromosome"), None,
+                #                            start, int(size) + int(start), entries["score"],
+                #                            entries["strand"], None, {})
+                #         a.transcripts.append(trans)
+                #         # print(f"Added new transcript to gene {entries['name']}")
+                # else:
+                a = BasicGeneModel(entries["name"])
                     # print(f"Added new gene {entries['name']}")
                 a.data = entries
                 all_genomes.append(a)
@@ -130,10 +122,7 @@ class Parser:
                 except StopIteration:
                     a = GeneModel(gene_match.group("name2"))
                     all_genomes.append(a)
-                trans = Transcript(gene_match.group("name"), gene_match.group("chrom"),
-                                   gene_match.group("cdsStartStat"),
-                                   gene_match.group("cdsStart"), gene_match.group("cdsEnd"), gene_match.group("score"),
-                                   gene_match.group("sign"), gene_match.group("exonFrames"), gene_match.groupdict())
+                trans = Transcript(gene_match.groupdict())
                 a.transcripts.append(trans)
                 # print(f"Added transcript {gene_match.group('name')} to gene {gene_match.group('name2')}")
         return all_genomes

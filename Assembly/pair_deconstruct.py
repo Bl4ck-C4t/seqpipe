@@ -16,8 +16,10 @@ if __name__ == '__main__':
     # for x in ls:
     #     s += f'({x})\n'
     # print(s)
-    for x in ls:
+    print(f'{k} {d}')
+    for x in sorted(ls):
         print(x)
-    with open("out.txt", "w") as f:
+    with open("../out.txt", "w") as f:
+        f.write(f'{k} {d}\n')
         for x in sorted(ls):
             f.write(x + "\n")

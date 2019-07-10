@@ -13,6 +13,9 @@ entries_reg = r'(?P<key>\w+)\s+(?P<value>\".+?\")'
 # entries_reg2 = r'(?P<name>\w+)\s+(?P<score>.+|\.)\s+(?P<strand>\w+\-|\+)\s+(?P<thickStart>\d+)\s+(?P<thickEnd>\d+)' \
 #               r'\s+(?P<itemRgb>(\d+,\d+,\d+)|0)\s+(?P<blockCount>\d+)'
 entries_reg2 = r"(.+?)\s+"
+reg3 = r'(?P<bin>\d+)\s+(?P<name>\w+)\s+(?P<chrom>\w+)\s+(?P<sign>\+|\-)\s+(?P<txStart>\d+)\s+(?P<txEnd>\d+)' \
+       r'\s+(?P<cdsStart>\d+)\s+(?P<cdsEnd>\d+)\s+(?P<exonCount>\d+)\s+(?P<exonStarts>.+?)\s+(?P<exonEnds>.+?)' \
+       r'\s+(?P<score>\d+)\s+(?P<name2>.+?)\s+(?P<cdsStartStat>\w+)\s+(?P<cdsEndStat>\w+?)\s+(?P<exonFrames>.+)'
 
 
 class Transcript:
@@ -75,7 +78,7 @@ class Parser:
                 except StopIteration:
                     a = GeneModel(entries["gene_id"])
                     all_genomes.append(a)
-                trans = Transcript(entries["gene_id"], gene_match.group("chromosome"), gene_match.group("feature"),
+                trans = Transcript(entries["gene_id"], gene_match.group("chrom"), gene_match.group("feature"),
                                    gene_match.group("start"), gene_match.group("end"), gene_match.group("score"),
                                    gene_match.group("sign"), gene_match.group("frame"), entries)
                 a.transcripts.append(trans)
@@ -97,6 +100,7 @@ class Parser:
                 entries = dict(zip(fields, entries))
                 if "blockSizes" in entries.keys():
                     a = GeneModel(entries["name"])
+
                     for size, start in zip(entries["blockSizes"].split(","), entries["blockStarts"].split(",")):
                         if size == '' or start == '':
                             continue
@@ -104,13 +108,34 @@ class Parser:
                                            start, int(size) + int(start), entries["score"],
                                            entries["strand"], None, {})
                         a.transcripts.append(trans)
-                        print(f"Added new transcript to gene {entries['name']}")
+                        # print(f"Added new transcript to gene {entries['name']}")
                 else:
                     a = BasicGeneModel(entries["name"])
-                    print(f"Added new gene {entries['name']}")
+                    # print(f"Added new gene {entries['name']}")
                 a.data = entries
                 all_genomes.append(a)
 
+        return all_genomes
+
+    @staticmethod
+    def full(fname):
+        all_genomes = []
+        with open(fname, "r") as f:
+            for line in f:
+                gene_match = re.search(reg3, line)
+                if gene_match is None:
+                    raise WrongFormat("Wrong file format given")
+                try:
+                    a = next(g for g in all_genomes if g.gene_id == gene_match.group("name2"))
+                except StopIteration:
+                    a = GeneModel(gene_match.group("name2"))
+                    all_genomes.append(a)
+                trans = Transcript(gene_match.group("name"), gene_match.group("chrom"),
+                                   gene_match.group("cdsStartStat"),
+                                   gene_match.group("cdsStart"), gene_match.group("cdsEnd"), gene_match.group("score"),
+                                   gene_match.group("sign"), gene_match.group("exonFrames"), gene_match.groupdict())
+                a.transcripts.append(trans)
+                # print(f"Added transcript {gene_match.group('name')} to gene {gene_match.group('name2')}")
         return all_genomes
 
 
@@ -122,9 +147,11 @@ if __name__ == '__main__':
             all_genomes = Parser.gtf(argv[1])
         elif extension == "bed":
             all_genomes = Parser.bed(argv[1])
+        elif extension == "full":
+            all_genomes == Parser.full(argv[1])
         all_genomes = set(all_genomes)
+
+        print(f"All genomes read: {', '.join([str(x) for x in all_genomes])}")
 
     else:
         print('Specify filename!')
-
-    print(f"All genomes read: {', '.join([str(x) for x in all_genomes])}")

@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 def paired_reconstruction(Patterns, d):
     db = DeBruijn(Patterns)
+    # db = DeBruijn(sorted(Patterns))
     plt.figure(1)
     # nx.draw_networkx(db, with_labels=True, node_color="blue", pos=nx.kamada_kawai_layout(db), font_color="red")
     # plt.show()

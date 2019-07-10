@@ -90,20 +90,9 @@ class Parser:
                     raise WrongFormat("Wrong file format given")
                 entries = gene_match.group("additional").rsplit("\t")
                 entries = dict(zip(fields, entries))
-                # if "blockSizes" in entries.keys():
-                #     a = GeneModel(entries["name"])
-                #
-                #     for size, start in zip(entries["blockSizes"].split(","), entries["blockStarts"].split(",")):
-                #         if size == '' or start == '':
-                #             continue
-                #         trans = Transcript(entries["name"], gene_match.group("chromosome"), None,
-                #                            start, int(size) + int(start), entries["score"],
-                #                            entries["strand"], None, {})
-                #         a.transcripts.append(trans)
-                #         # print(f"Added new transcript to gene {entries['name']}")
-                # else:
+
                 a = BasicGeneModel(entries["name"])
-                    # print(f"Added new gene {entries['name']}")
+                # print(f"Added new gene {entries['name']}")
                 a.data = entries
                 all_genomes.append(a)
 
@@ -128,6 +117,24 @@ class Parser:
         return all_genomes
 
 
+#
+# r'(?P<bin>\d+)\s+(?P<name>\w+)\s+(?P<chrom>\w+)\s+(?P<sign>\+|\-)\s+(?P<txStart>\d+)\s+(?P<txEnd>\d+)' \
+#        r'\s+(?P<cdsStart>\d+)\s+(?P<cdsEnd>\d+)\s+(?P<exonCount>\d+)\s+(?P<exonStarts>.+?)\s+(?P<exonEnds>.+?)' \
+#        r'\s+(?P<score>\d+)\s+(?P<name2>.+?)\s+(?P<cdsStartStat>\w+)\s+(?P<cdsEndStat>\w+?)\s+(?P<exonFrames>.+)'
+class Translator:
+    @staticmethod
+    def full(fname, genes):
+        with open(fname, "r") as f:
+            for gene in genes:
+                for transcript in gene.transcripts:
+                    ent = transcript.additional
+                    f.write(f"{ent['bin']} {ent['name']} {ent['chrom']} {ent['sign']} {ent['txStart']} {ent['txEnd']} "
+                            f"{ent['cdsStart']} {ent['cdsEnd']} {ent['exonCount']} {ent['exonStarts']} "
+                            f"{ent['exonEnds']} {ent['score']} {ent['name2']} {ent['cdsStartStat']} "
+                            f"{ent['cdsEndStat']} {ent['exonFrames']}\n")
+        print(f"Object written to file '{fname}'")
+
+
 if __name__ == '__main__':
     all_genomes = set()
     if len(argv) > 1:
@@ -138,6 +145,7 @@ if __name__ == '__main__':
             all_genomes = Parser.bed(argv[1])
         elif extension == "full":
             all_genomes == Parser.full(argv[1])
+            Translator.full("genes.full", all_genomes)
         all_genomes = set(all_genomes)
 
         print(f"All genomes read: {', '.join([str(x) for x in all_genomes])}")

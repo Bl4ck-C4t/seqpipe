@@ -140,7 +140,7 @@ class Visualizer:
         genome: GeneModel = genomes[0]
 
         strand = genome.transcripts[0].additional["sign"]
-        # plt.figure(1)
+        #plt.figure(1)
         for trans, y in zip(genome.transcripts, reversed(range(10))):
             trans: Transcript
             y /= 10
@@ -148,11 +148,12 @@ class Visualizer:
             if strand == "-":
                 plt.arrow(0, y, int(trans.additional["txEnd"]) / 100000000 + 0.6, 0, width=0.01)
                 plt.text(int(trans.additional["txEnd"]) / 100000000 + 0.6, y + 0.04, trans.additional["name"])
+
             for start, end in zip(trans.additional["exonStarts"].split(",")[:-1],
                                   trans.additional["exonEnds"].split(",")[:-1]):
                 pass
                 pass
-                plt.axes().add_patch(patch.Rectangle((int(start) / 100000000 + 0.1, y - 0.04),
+                plt.axes().add_patch(patch.Rectangle((int(start)/65000000, y - 0.04),
                                                      (int(end) / 100000000 - int(start) / 100000000) * 3000, 0.08))
                 # plt.axes().add_patch(patch.Rectangle((0.2, 0.4), 0.3, 0.3))
         plt.show()

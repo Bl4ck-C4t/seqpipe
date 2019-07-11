@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/GeneParser.py" line="126" />
+    <bookmark url="file://$PROJECT_DIR$/GeneParser.py" line="105" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da8705bd-6ec3-42f9-a47c-69bd2ee8260c" name="Default Changelist" comment="">
+    <list default="true" id="da8705bd-6ec3-42f9-a47c-69bd2ee8260c" name="Default Changelist" comment="Added object -&gt; file translation for full gtf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly/pair_deconstruct.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly/pair_deconstruct.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/GeneParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PairedReconstruct.py" beforeDir="false" afterPath="$PROJECT_DIR$/PairedReconstruct.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GeneParser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+            <state relative-caret-position="470">
+              <caret line="158" column="18" lean-forward="true" selection-start-line="158" selection-start-column="18" selection-end-line="158" selection-end-column="18" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -32,10 +29,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../.conda/envs/scripts/lib/python3.7/sre_parse.py">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="574" selection-start-line="574" selection-end-line="574" />
+            <state relative-caret-position="374">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -43,8 +40,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PairedReconstruct.py">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assembly/pair_deconstruct.py">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -52,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GraphGenerators/paired_kmer_graph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
+            <state relative-caret-position="550">
               <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -64,35 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Paths/eulerian_cycle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="1892">
               <caret line="88" selection-start-line="88" selection-end-line="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assembly/pair_deconstruct.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out2.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="7" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -147,8 +126,8 @@
         <option value="$PROJECT_DIR$/Tests/shortBed.txt" />
         <option value="$PROJECT_DIR$/PairedReconstruct.py" />
         <option value="$PROJECT_DIR$/out2.txt" />
-        <option value="$PROJECT_DIR$/Assembly/pair_deconstruct.py" />
         <option value="$PROJECT_DIR$/out.txt" />
+        <option value="$PROJECT_DIR$/Assembly/pair_deconstruct.py" />
         <option value="$PROJECT_DIR$/GeneParser.py" />
       </list>
     </option>
@@ -164,7 +143,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -181,6 +159,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -219,7 +198,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GeneParser.py" />
-      <option name="PARAMETERS" value="RefSeq.full" />
+      <option name="PARAMETERS" value="MTOR.full" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -321,8 +300,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.GeneParser" />
-        <item itemvalue="Python.pair_deconstruct" />
         <item itemvalue="Python.PairedReconstruct" />
+        <item itemvalue="Python.pair_deconstruct" />
         <item itemvalue="Python.contigs" />
         <item itemvalue="Python.max_non_branch_paths" />
       </list>
@@ -374,7 +353,35 @@
       <option name="project" value="LOCAL" />
       <updated>1562672738489</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Parsing all">
+      <created>1562754385401</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562754385401</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Paired destruct for some reason working">
+      <created>1562755847916</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562755847916</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added object -&gt; file translation for full gtf">
+      <created>1562760408722</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1562760408722</updated>
+    </task>
+    <task id="LOCAL-00009" summary="drawing each transcript with  it's name">
+      <created>1562842708611</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562842708611</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -385,7 +392,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3299373" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3299373" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3299373" />
       <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39968652" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -446,7 +453,11 @@
     <MESSAGE value="Completed non branching paths and contig assembly" />
     <MESSAGE value="Created GeneParser version 1" />
     <MESSAGE value="bed parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="bed parser" />
+    <MESSAGE value="Parsing all" />
+    <MESSAGE value="Paired destruct for some reason working" />
+    <MESSAGE value="Added object -&gt; file translation for full gtf" />
+    <MESSAGE value="drawing each transcript with  it's name" />
+    <option name="LAST_COMMIT_MESSAGE" value="drawing each transcript with  it's name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -493,7 +504,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/GeneParser.py</url>
-          <line>148</line>
+          <line>168</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -513,13 +524,8 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/GeneParser.py</url>
-          <line>94</line>
+          <line>82</line>
           <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/GeneParser.py</url>
-          <line>102</line>
-          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/PairedReconstruct.py</url>
@@ -533,18 +539,33 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/GeneParser.py</url>
-          <line>125</line>
+          <line>104</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/GeneParser.py</url>
-          <line>136</line>
+          <line>112</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/GeneParser.py</url>
-          <line>151</line>
-          <option name="timeStamp" value="45" />
+          <line>170</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GeneParser.py</url>
+          <line>145</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GeneParser.py</url>
+          <line>158</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GeneParser.py</url>
+          <line>155</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -552,99 +573,99 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>with open(&quot;out.txt&quot;, &quot;r&quot;) as f:
-    s = f.readlines()</expression-string>
+        <expression-string>plt.axes().add_patch(patch.Rectangle((int(start)/100000000, y-0.05), (int(end)/100000000-int(start)/100000000)*100, 0.1))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>s == sorted(Patterns)</expression-string>
+        <expression-string>plt.axes().add_patch(patch.Rectangle((int(start)/100000000, y-0.05), (int(end)/100000000-int(start)/100000000)*10, 0.1))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>s = [x[:-1] for x in s]</expression-string>
+        <expression-string>plt.axes().add_patch(patch.Rectangle((int(start)/100000000, y-0.05), int(end)/100000000-int(start)/100000000, 0.1))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>with open(&quot;out.txt&quot;, &quot;r&quot;) as f:
-    s = f.readlines().split(&quot;\n&quot;)[1:-1]</expression-string>
+        <expression-string>plt.text(int(trans.additional[&quot;txEnd&quot;]) / 100000000+0.7, y, &quot;hey123&quot;)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db2 = DeBruijn(sorted(Patterns))</expression-string>
+        <expression-string>plt.text(int(trans.additional[&quot;txEnd&quot;]) / 100000000+0.6, y, &quot;hey123&quot;)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>for x in sorted(Patterns):
-    print(x)</expression-string>
+        <expression-string>plt.text(int(trans.additional[&quot;txEnd&quot;]) / 100000000, y, &quot;hey123&quot;)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>for x in d:
-    if not x in list(db2.adj.keys()):
-        print(x)</expression-string>
+        <expression-string>plt.text</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>s = s.split(&quot;\n&quot;)[1:]</expression-string>
+        <expression-string>plt.yscale(10)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>s.split(&quot;\n&quot;)</expression-string>
+        <expression-string>plt.ylabel(&quot;hey&quot;)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>plt.xlabel(&quot;hey&quot;)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>gene_match.groupdict()</expression-string>
+        <expression-string>plt.show()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>gene_match.groups()</expression-string>
+        <expression-string>plt.xticks([0.001, 0.002, 0.003, 0.004])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>h = [(x,y) for x,y in d if x != y]</expression-string>
+        <expression-string>plt.xticks([1,2,3,4])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>d = list(zip(s, sorted(Patterns)))</expression-string>
+        <expression-string>plt.xscale(200000)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db2 = DeBruijn(sorted(Patterns))</expression-string>
+        <expression-string>plt.xscale(200)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db2 = DeBruijn(s)</expression-string>
+        <expression-string>int(start)/10000000</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>s=s[1:]</expression-string>
+        <expression-string>int(start)/1000000</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>s = [x[:-1] for x in s]</expression-string>
+        <expression-string>int(start)/9500000</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>sorted(Patterns)</expression-string>
+        <expression-string>int(start)/8500000</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -668,7 +689,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deBrujin_graph_networkx.py" />
-    <entry file="file://$PROJECT_DIR$/Assembly/out.txt" />
     <entry file="file://$PROJECT_DIR$/StringReconstruct.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -847,69 +867,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shortBed.bed">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="81" selection-start-column="81" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assembly/deassemble.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GraphGenerators/paired_kmer_graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Paths/eulerian_cycle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PairedReconstruct.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assembly/pair_deconstruct.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="7" selection-end-line="31" />
         </state>
       </provider>
     </entry>
@@ -927,10 +888,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assembly/out.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PairedReconstruct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assembly/pair_deconstruct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraphGenerators/paired_kmer_graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Paths/eulerian_cycle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1892">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assembly/deassemble.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/genes.full">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTOR.full">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../.conda/envs/scripts/lib/python3.7/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GeneParser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        <state relative-caret-position="470">
+          <caret line="158" column="18" lean-forward="true" selection-start-line="158" selection-start-column="18" selection-end-line="158" selection-end-column="18" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

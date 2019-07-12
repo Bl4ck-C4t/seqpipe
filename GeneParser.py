@@ -2,6 +2,9 @@ from sys import argv
 import re
 import matplotlib.pyplot as plt
 import matplotlib.patches as patch
+import math
+from typing import *
+
 
 class WrongFormat(RuntimeError):
     pass
@@ -47,7 +50,7 @@ class BasicGeneModel:
 class GeneModel(BasicGeneModel):
     def __init__(self, gene_id, strand):
         super().__init__(gene_id, strand)
-        self.transcripts = []
+        self.transcripts: List[Transcript] = []
 
 
 class Parser:
@@ -136,31 +139,50 @@ class Translator:
 
 class Visualizer:
     @staticmethod
+    def generate_scale(mn, mx, a, b) -> Callable[[int], float]:
+        scale = lambda x: (((b - a) * (x - mn)) / (mx - mn)) + a
+        return scale
+
+    @staticmethod
+    def max_and_min_transcript_points(genome: GeneModel) -> Tuple[int, int]:
+        ls: List[str] = []
+        for trans in genome.transcripts:
+            ls += trans.additional["exonStarts"].split(",")[:-1]
+            ls += trans.additional["exonEnds"].split(",")[:-1]
+        all_positions: List[int] = [int(x) for x in ls]
+
+        return max(all_positions), min(all_positions)
+
+    @staticmethod
     def full(genomes):
         genome: GeneModel = genomes[0]
-
         strand = genome.transcripts[0].additional["sign"]
-        #plt.figure(1)
+        # plt.figure(1)
         for trans, y in zip(genome.transcripts, reversed(range(10))):
             trans: Transcript
             y /= 10
             # plt.arrow(0, y, trans.additional["cdsEnd"], y)
+            trans_end = int(trans.additional["txEnd"]) / 100000000 + 0.6
             if strand == "-":
-                plt.arrow(0, y, int(trans.additional["txEnd"]) / 100000000 + 0.6, 0, width=0.01)
+                plt.arrow(0, y, trans_end, 0, width=0.01)
                 plt.text(int(trans.additional["txEnd"]) / 100000000 + 0.6, y + 0.04, trans.additional["name"])
+            mx, mn = Visualizer.max_and_min_transcript_points(genome)
+            scale = Visualizer.generate_scale(mx, mn, 0, trans_end)
 
             for start, end in zip(trans.additional["exonStarts"].split(",")[:-1],
                                   trans.additional["exonEnds"].split(",")[:-1]):
                 pass
                 pass
-                plt.axes().add_patch(patch.Rectangle((int(start)/65000000, y - 0.04),
-                                                     (int(end) / 100000000 - int(start) / 100000000) * 3000, 0.08))
+                plt.axes().add_patch(patch.Rectangle((scale(int(start))-0.03, y - 0.04),
+                                                     (scale(int(end)) - scale(int(start))) * 5, 0.08))
+                # plt.axes().add_patch(patch.Rectangle((int(start)/65000000, y - 0.04),
+                #                                      (int(end) / 100000000 - int(start) / 100000000) * 3000, 0.08))
                 # plt.axes().add_patch(patch.Rectangle((0.2, 0.4), 0.3, 0.3))
         plt.show()
 
 
 if __name__ == '__main__':
-    all_genomes = set()
+    all_genomes: list = []
     if len(argv) > 1:
         extension = argv[1][argv[1].index(".") + 1:]
         if extension == "gtf":
@@ -171,9 +193,9 @@ if __name__ == '__main__':
             all_genomes = Parser.full(argv[1])
             # Translator.full("genes.full", all_genomes)
             Visualizer.full(all_genomes)
-        all_genomes = set(all_genomes)
+        genome_set = set(all_genomes)
 
-        print(f"All genomes read: {', '.join([str(x) for x in all_genomes])}")
+        print(f"All genomes read: {', '.join([str(x) for x in genome_set])}")
 
     else:
         print('Specify filename!')

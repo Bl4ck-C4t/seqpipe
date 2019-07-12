@@ -166,6 +166,7 @@ class Visualizer:
             if strand == "-":
                 plt.arrow(0, y, trans_end, 0, width=0.01)
                 plt.text(int(trans.additional["txEnd"]) / 100000000 + 0.6, y + 0.04, trans.additional["name"])
+                plt.text(int(trans.additional["txEnd"]) / 100000000 + 0.65, y-0.02, trans.additional["chrom"])
             mx, mn = Visualizer.max_and_min_transcript_points(genome)
             scale = Visualizer.generate_scale(mx, mn, 0, trans_end)
 

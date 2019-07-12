@@ -164,7 +164,7 @@ class Visualizer:
             # plt.arrow(0, y, trans.additional["cdsEnd"], y)
             trans_end = int(trans.additional["txEnd"]) / 100000000 + 0.6
             if strand == "-":
-                plt.arrow(0, y, trans_end, 0, width=0.01)
+                plt.arrow(0, y, trans_end, 0, width=0.005)
                 plt.text(int(trans.additional["txEnd"]) / 100000000 + 0.6, y + 0.04, trans.additional["name"])
                 plt.text(int(trans.additional["txEnd"]) / 100000000 + 0.65, y-0.02, trans.additional["chrom"])
             mx, mn = Visualizer.max_and_min_transcript_points(genome)

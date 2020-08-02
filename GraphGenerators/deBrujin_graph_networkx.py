@@ -1,6 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
+
 def preffix(r):
     k = len(r)
     return r[:k - 1]

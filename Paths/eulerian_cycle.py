@@ -53,7 +53,7 @@ def AllEulerianCycles2(g, start=None):
         for next_node in all_next_nodes(g, path):
 
             if next_node is None:
-                return "->".join(path)
+                return path
             new_path = []
             ind = -(path[::-1].index(next_node) + 1)
             new_path += path[ind:]
@@ -103,7 +103,7 @@ def performCycle(g, start):
 
 
 def AllEulerianCycles(g):
-    return set([EulerianCycle2(g, node) for node in g])
+    return [x.split("->") for x in set([EulerianCycle2(g, node) for node in g])]
 
 
 def draw_thread(g):

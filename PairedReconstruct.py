@@ -6,14 +6,17 @@ import matplotlib.pyplot as plt
 
 
 def paired_reconstruction(Patterns, d):
+    print("Building graph...")
     db = DeBruijn(Patterns)
     # db = DeBruijn(sorted(Patterns))
     plt.figure(1)
     # nx.draw_networkx(db, with_labels=True, node_color="blue", pos=nx.kamada_kawai_layout(db), font_color="red")
     # plt.show()
-    path = EulerianPath(db)
-    text = paired_assemble(path, d+1)
-    return text
+    print("Finding paths...")
+    paths = AllEulerianPaths(db)
+    print("Assembling paths...")
+    texts = [paired_assemble(path, d+1) for path in paths]
+    return texts
 
 
 if __name__ == '__main__':
@@ -24,7 +27,12 @@ if __name__ == '__main__':
             patterns.append(input())
         except EOFError as e:
             break
-    print(paired_reconstruction(patterns, d))
+    results = paired_reconstruction(patterns, d)
+    print(f"Found {len(results)} possible assemblies: ")
+    for text in results:
+        print(text)
+        print("-"*10)
+
     # plt.show()
 
 # AGGGGGGGGGGT

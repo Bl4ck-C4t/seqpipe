@@ -52,4 +52,7 @@ if __name__ == '__main__':
     d1['A'] = 'G'
     print(d1['A'])
     print(d1['G'])
+    d1['A'] = 'T'
+    d1['G'] = 'C'
+    print(d1)
     # print(dict(d1).keys())
